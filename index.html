@@ -26,10 +26,13 @@
   html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   html,body{margin:0;padding:0}
   body{font-family:'Montserrat',system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:clip}
-  .sec-headline{margin:0 auto 14px;color:var(--navy);font-weight:900;font-size:44px;line-height:1.08;letter-spacing:-.8px;max-width:820px}
+  .sec-intro{display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;margin-bottom:46px}
+  .sec-intro .sec-eyebrow{text-align:center}
+  .sec-headline{margin:0 auto 14px;color:var(--navy);font-weight:900;font-size:44px;line-height:1.08;letter-spacing:-.8px;max-width:820px;width:100%;text-align:center}
   .sec-headline b{color:var(--green)}
   .sec-headline .or{color:var(--orange)}
-  .sec-sublead{margin:0 auto;color:#3a4070;font-size:17px;font-weight:500;line-height:1.55;max-width:720px}
+  .sec h2.sec-headline{margin:0 auto 14px;text-align:center}
+  .sec-sublead{margin:0 auto;color:#3a4070;font-size:17px;font-weight:500;line-height:1.55;max-width:720px;text-align:center}
   .sec-sublead--spaced{margin-top:14px;margin-bottom:0;max-width:640px}
   .callout-box{margin-top:18px;background:linear-gradient(135deg,#fff7e6 0%,#fff 100%);border:2px dashed var(--orange);border-radius:14px;padding:18px 24px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center;text-align:center}
   .callout-box p{margin:0;color:var(--navy);font-weight:800;font-size:14px;line-height:1.5;max-width:680px}
@@ -42,7 +45,7 @@
   .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;max-width:1200px;margin:0 auto;gap:18px}
   .logo{display:inline-flex;align-items:center;line-height:0}
   .logo img{height:38px;width:auto}
-  .ve-tag{display:inline-flex;align-items:center;gap:6px;font-weight:900;font-size:11px;letter-spacing:1.5px;margin-left:14px;color:#fff;vertical-align:middle;background:linear-gradient(90deg,#ffd400 0%,#ffd400 33%,#1a237e 33%,#1a237e 66%,#dc3545 66%);padding:5px 12px;border-radius:6px}
+  .ve-tag{display:inline-flex;align-items:center;gap:6px;font-weight:900;font-size:11px;letter-spacing:1.5px;margin-left:14px;color:#fff;vertical-align:middle;background:linear-gradient(180deg,#9ad96a,#5fa733);padding:5px 12px;border-radius:6px;box-shadow:0 4px 10px rgba(95,167,51,.35)}
   .ve-tag::before{content:"INTENSIVO: AM"}
 
   .cta-pill{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(180deg,#9ad96a,#5fa733);color:#fff;font-weight:800;font-style:italic;padding:14px 26px;border-radius:999px;box-shadow:0 6px 14px rgba(95,167,51,.35);border:none;cursor:pointer;font-size:15px;transition:transform .15s ease, box-shadow .15s ease}
@@ -72,6 +75,7 @@
   h1.hero-h .y{color:var(--yellow)}
 
   .hero-sub{font-size:18px;line-height:1.55;color:#dfe4ff;font-weight:500;margin:0 0 18px;max-width:560px}
+  .hero-sub + .hero-sub{margin-top:-4px;margin-bottom:18px}
   .hero-sub b{color:#fff;font-weight:800}
   .hero-promise{display:inline-block;font-size:13.5px;color:var(--yellow);font-weight:900;font-style:italic;letter-spacing:.4px;margin:0 0 24px;padding:10px 16px;background:rgba(255,212,0,.1);border-left:3px solid var(--yellow);border-radius:0 8px 8px 0}
 
@@ -125,6 +129,7 @@
   .flip{display:flex;gap:8px}
   .flip .digit{position:relative;width:62px;height:80px;border-radius:8px;background:linear-gradient(180deg,#fff 0%,#f0f3fa 50%,#fff 50.1%,#e9ecf1 100%);box-shadow:inset 0 0 0 2px rgba(0,0,0,.06);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:54px;color:var(--navy);overflow:hidden}
   .flip .digit:first-child{color:var(--orange)}
+  .flip .digit:nth-child(2){background:#f99c9c;color:#f76a6e}
   .flip .digit::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:rgba(0,0,0,.18)}
   .flip-label{text-align:center;color:#fff;font-weight:900;font-size:11px;letter-spacing:1.5px;margin-top:8px}
 
@@ -132,7 +137,7 @@
   .sec{padding:90px 0;position:relative}
   .sec-eyebrow{display:inline-block;color:var(--green-2);font-weight:900;font-size:12px;letter-spacing:3px;margin:0 0 12px}
   .sec-eyebrow.or{color:var(--orange)}
-  .sec h2{margin:0 0 14px;color:var(--navy);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:-.8px;max-width:820px}
+  .sec h2:not(.sec-headline){margin:0 0 14px;color:var(--navy);font-weight:900;font-size:44px;line-height:1.05;letter-spacing:-.8px;max-width:820px}
   .sec h2 b{color:var(--green)}
   .sec h2 .or{color:var(--orange)}
   .sec .lead{margin:0 0 50px;color:#3a4070;font-size:17px;font-weight:500;line-height:1.55;max-width:720px}
@@ -156,12 +161,22 @@
   .level.b1 .hrs{background:linear-gradient(135deg,#1a237e,#0f1761)}
   .level-arrow{display:flex;align-items:center;justify-content:center;font-size:32px;color:var(--orange);font-weight:900}
 
-  .totals{display:flex;align-items:center;justify-content:center;gap:0;margin-top:24px;background:#fff;border-radius:14px;padding:18px;border:1px solid #e3e7ef;flex-wrap:wrap;box-shadow:0 8px 20px rgba(15,23,97,.06)}
-  .totals .t{padding:0 28px;text-align:center;border-right:1px solid #e3e7ef}
+  .totals{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch;margin-top:24px;background:#fff;border-radius:14px;padding:0;border:1px solid #e3e7ef;box-shadow:0 8px 20px rgba(15,23,97,.06)}
+  .totals .t{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 12px;text-align:center;border-right:1px solid #e3e7ef;min-height:76px}
   .totals .t:last-child{border-right:0}
-  .totals .lbl{font-weight:900;font-size:10px;letter-spacing:1.5px;color:var(--muted);margin:0 0 2px}
-  .totals .val{font-weight:900;font-size:18px;color:var(--navy);letter-spacing:-.2px}
+  .totals .lbl{font-weight:900;font-size:10px;letter-spacing:1.5px;color:var(--muted);margin:0 0 4px;line-height:1.2}
+  .totals .val{font-weight:900;font-size:18px;color:var(--navy);letter-spacing:-.2px;line-height:1.2}
   .totals .val .ic{color:var(--orange)}
+
+  @media (max-width:720px){
+    .totals{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .totals .t{padding:16px 10px;min-height:72px}
+    .totals .t{border-right:1px solid #e3e7ef;border-bottom:1px solid #e3e7ef}
+    .totals .t:nth-child(2n){border-right:0}
+    .totals .t:nth-last-child(-n+2){border-bottom:0}
+    .totals .val{font-size:16px}
+    .totals .lbl{font-size:9px;letter-spacing:1.2px}
+  }
 
   /* PILLARS */
   .pillars{background:#fff}
@@ -216,7 +231,8 @@
   /* SCHEDULE */
   .sched{background:#fff;padding:90px 0}
   .sched-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-  .sched-h h2{margin:0 0 14px;color:var(--navy);font-weight:900;font-size:42px;letter-spacing:-.7px;line-height:1.05}
+  .sched-h{text-align:center}
+  .sched-h h2{margin:0 auto 14px;color:var(--navy);font-weight:900;font-size:42px;letter-spacing:-.7px;line-height:1.05;max-width:720px}
   .sched-h h2 b{color:var(--orange)}
   .sched-h p{margin:0 0 24px;color:#3a4070;font-size:16px;font-weight:500;line-height:1.55}
   .turns{display:flex;flex-direction:column;gap:14px}
@@ -303,6 +319,8 @@
   .final h2 .g{color:var(--green)}
   .final p{margin:0 0 30px;color:#dfe4ff;font-weight:600;font-size:17px;position:relative;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.55}
   .final p b{color:var(--yellow);font-weight:900}
+  .final .final-lines{display:flex;flex-direction:column;gap:6px;margin-bottom:30px;color:#dfe4ff;font-weight:600;font-size:17px;position:relative;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.55;text-align:center}
+  .final .final-lines b{color:var(--yellow);font-weight:900}
   .final .row{position:relative;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center}
   .final .cta-pill{font-size:16px;padding:18px 36px}
   .final .meta{margin-top:20px;color:#bcc3e8;font-weight:700;font-size:12px;letter-spacing:.5px;position:relative}
@@ -368,10 +386,10 @@
     .sec-eyebrow{font-size:10px;letter-spacing:2px}
     .level{padding:20px}
     .level .head h3{font-size:18px}
-    .totals .t{flex:1 1 45%;padding:12px 10px;border-right:0;border-bottom:1px solid #e3e7ef}
-    .totals .t:nth-child(odd){border-right:1px solid #e3e7ef}
-    .totals .t:nth-last-child(-n+2){border-bottom:0}
-    .totals .val{font-size:15px}
+    .totals{border-radius:12px}
+    .totals .t{padding:14px 8px;min-height:68px}
+    .totals .val{font-size:14px;line-height:1.25}
+    .totals .lbl{font-size:8.5px;letter-spacing:1px;margin-bottom:3px}
     .aud-tabs button{padding:12px 16px;font-size:11px}
     .aud-text h3{font-size:22px}
     .turn{flex-direction:column;align-items:flex-start;gap:12px;padding:16px}
@@ -438,11 +456,9 @@
     .level .dates{font-size:11px;padding:6px 10px}
     .level p.desc,.level li{font-size:12px}
     .level .hrs{font-size:12px;padding:10px 12px}
-    .totals{padding:12px;border-radius:12px}
-    .totals .t{flex:1 1 100%;border-right:0!important;border-bottom:1px solid #e3e7ef;padding:10px 6px}
-    .totals .t:last-child{border-bottom:0}
-    .totals .lbl{font-size:9px}
-    .totals .val{font-size:13px}
+    .totals .t{padding:12px 6px;min-height:64px}
+    .totals .val{font-size:12px;letter-spacing:-.1px}
+    .totals .lbl{font-size:8px;letter-spacing:.8px;line-height:1.25}
     .callout-box{padding:14px;gap:10px}
     .callout-box p{font-size:12.5px}
     .aud-tabs{gap:8px;margin:20px 0}
@@ -541,9 +557,10 @@
     <div>
       <div class="speed-mini">☀ INTENSIVO: AM · APROVECHA TU TIEMPO LIBRE</div>
       <div><span class="hero-eyebrow">PROGRAMA INTENSIVO · HORARIOS DE LA MAÑANA</span></div>
-      <h1 class="hero-h">Domina un nivel de inglés en <span class="or">8 semanas</span> — en tu <span class="green">mañana libre.</span></h1>
-      <p class="hero-sub">96 horas académicas, clases <b>en vivo</b> con profesores certificados, método comunicacional. <b>Tres horarios en la mañana</b> para que aprendas antes de empezar tu día — sin renunciar al trabajo, ni a la familia, ni a la tarde.</p>
-      <p class="hero-promise">🕒 3 horarios de la mañana: 7-9am · 9-11am · 11am-1pm · grupos pequeños</p>
+      <h1 class="hero-h">Domina un nivel de inglés en <span class="or">8 semanas</span>, en tu <span class="green">mañana libre.</span></h1>
+      <p class="hero-sub">96 horas académicas, clases <b>en vivo</b> con profesores certificados y una metodología comunicacional para aprender hablando desde el inicio.</p>
+      <p class="hero-sub">Tres horarios en la mañana para que aprendas antes de empezar tu día, sin renunciar al trabajo, a tu familia ni a tus tardes.</p>
+      <p class="hero-promise">🕒 3 horarios de la mañana: 7-9am · 9-11am · 11am-1pm · Grupos reducidos</p>
 
       <div class="aud-toggle" id="audToggleHero">
         <button class="active kids" data-aud="kids"><span class="ic">🎒</span> Para Niños</button>
@@ -577,7 +594,7 @@
           <div class="tc-body">
             <p class="dates">HORARIO TEMPRANO</p>
             <h4>7:00 AM — 9:00 AM</h4>
-            <p>Antes del trabajo o de llevar a los niños al colegio. Llegas al día listo y con energía.</p>
+            <p>Antes del trabajo o de llevar a los niños al colegio. Comienzas el día listo.</p>
           </div>
         </div>
         <div class="tc-step">
@@ -585,7 +602,7 @@
           <div class="tc-body">
             <p class="dates">HORARIO INTERMEDIO</p>
             <h4>9:00 AM — 11:00 AM</h4>
-            <p>Para quien tiene mañanas libres, trabaja desde casa, o ya dejó a los niños en la escuela.</p>
+            <p>Para quien tiene las mañanas libres, trabaja desde casa o ya dejó a los niños en la escuela.</p>
           </div>
         </div>
         <div class="tc-step b1">
@@ -593,7 +610,7 @@
           <div class="tc-body">
             <p class="dates">HORARIO MEDIA MAÑANA</p>
             <h4>11:00 AM — 1:00 PM</h4>
-            <p>Para emprendedores, freelancers, jubilados, amas de casa, o quien empieza el día tarde.</p>
+            <p>Para emprendedores, freelancers, jubilados, amas de casa o quien empieza la jornada tarde.</p>
           </div>
         </div>
         <div class="tc-foot">
@@ -626,7 +643,7 @@
     </div>
     <div class="promo-mid">
       <p class="price-label">INVERSIÓN POR NIVEL</p>
-      <p class="price">$540</p>
+      <p class="price">$560</p>
       <p class="strike">8 SEMANAS · 64 HORAS · MENOS DE $9/HORA</p>
     </div>
   </div>
@@ -634,10 +651,10 @@
 
 <!-- PROGRAM STRUCTURE -->
 <section class="sec levels">
-  <div class="wrap" style="text-align:center">
+  <div class="wrap sec-intro" style="margin-bottom:40px">
     <span class="sec-eyebrow or">ESTRUCTURA DEL PROGRAMA</span>
-    <h2 class="sec-headline">Un nivel completo. <b>En 8 semanas.</b></h2>
-    <p class="sec-sublead" style="margin-bottom:40px">Cada nivel del Marco Común Europeo (A1, A2, B1, B2, C1) en su propio bloque intensivo de 8 semanas — 64 horas académicas, clases en vivo, certificado al final. Eliges el nivel que necesitas y vas avanzando bloque por bloque.</p>
+    <h2 class="sec-headline">Un nivel completo en 8 semanas.</h2>
+    <p class="sec-sublead">Cada nivel del Marco Común Europeo (A1, A2, B1, B2, C1) en su propio bloque intensivo de 8 semanas. 64 horas académicas, con clases en vivo y certificado al finalizar. Comienzas el nivel que necesitas y vas avanzando bloque por bloque.</p>
   </div>
   <div class="wrap">
     <div class="levels-grid">
@@ -697,9 +714,9 @@
 <!-- AUDIENCE PANES -->
 <section class="foryou">
   <div class="wrap" style="text-align:center">
-    <span class="sec-eyebrow or">UN PROGRAMA, DOS REALIDADES</span>
+    <span class="sec-eyebrow or">UN PROGRAMA. DOS REALIDADES</span>
     <h2 class="sec-headline">Para los niños. <b>Y para ti también.</b></h2>
-    <p class="sec-sublead sec-sublead--spaced">Mismo método, mismas 96 horas, mismos profesores certificados — adaptado al niño que aprovecha vacaciones y al adulto que por fin tiene tiempo para él mismo.</p>
+    <p class="sec-sublead sec-sublead--spaced">Mismo método, mismas 96 horas y profesores certificados. Adaptado para el niño que aprovecha sus vacaciones y para el adulto que por fin tiene tiempo para él mismo.</p>
 
     <div class="aud-tabs" id="audTabs">
       <button class="active kids" data-pane="kids"><span class="ic">🎒</span> Para Niños y Adolescentes</button>
@@ -712,8 +729,8 @@
     <div class="aud-pane active kids" data-pane="kids">
       <div class="aud-grid">
         <div class="aud-text">
-          <h3>Tu hijo aprovecha la <b>mañana</b> — y empieza el colegio un nivel adelante.</h3>
-          <p class="desc">Mientras otros niños siguen el ritmo lento de academia tradicional, el tuyo termina <b>un nivel CEFR completo en 8 semanas</b>, en el horario de la mañana que tú elijas. Sin chocar con su escuela, sin agotar la tarde de tareas, con profesor real en vivo y grupos pequeños donde sí participa.</p>
+          <h3>Tu hijo aprovecha la <b>mañana</b> y empieza el colegio un nivel adelante.</h3>
+          <p class="desc">Mientras otros niños siguen el ritmo lento de una academia tradicional, el tuyo completa un nivel CEFR en solo 8 semanas, en el horario de la mañana que mejor se adapte a su rutina. Sin interferir con la escuela, sin ocupar sus tardes de tareas, con profesores en vivo y en un grupo reducido donde realmente participa.</p>
           <div class="who">
             <span class="chip hot">⭐ Mañanas productivas</span>
             <span class="chip">Niños 7-12</span>
@@ -722,10 +739,10 @@
             <span class="chip">Apoyo TOEFL/Cambridge</span>
           </div>
           <ul>
-            <li>Grupos por edad — no mezcla niños chiquitos con adolescentes</li>
-            <li>Profesores certificados TEFL/Celta · método comunicacional</li>
-            <li>Reporte para padres cada 2 semanas</li>
-            <li>Material digital incluido · sin libros caros</li>
+            <li>Grupos segmentados por edad — No mezcla niños chiquitos con adolescentes</li>
+            <li>Profesores certificados TEFL/Celta · Metodología comunicacional</li>
+            <li>Reportes periódicos</li>
+            <li>Material digital incluido · Sin libros caros</li>
             <li>Certificado Fyr Lois al finalizar, equivalente A1 MCER</li>
           </ul>
           <a class="cta-pill whatsapp-link" href="https://wa.me/16893225402?text=Hola%2C%20me%20interesa%20el%20Intensivo%3A%20AM%20de%20Fyr%20Lois." target="_blank" rel="noopener noreferrer">
@@ -740,7 +757,7 @@
           <p class="ttl">El cambio real en tu hijo</p>
           <div class="feat">
             <div class="ic">1</div>
-            <div><h5>Semana 1-2 · Pierde el miedo</h5><p>Habla en inglés desde el día 1 — sin vergüenza, en grupo pequeño donde nadie se ríe.</p></div>
+            <div><h5>Semana 1-2 · Pierde el miedo</h5><p>Habla en inglés desde el primer día, con confianza y en un grupo reducido donde se siente cómodo para participar.</p></div>
           </div>
           <div class="feat">
             <div class="ic">2</div>
@@ -748,11 +765,11 @@
           </div>
           <div class="feat">
             <div class="ic">3</div>
-            <div><h5>Semana 5-6 · Estructura A1</h5><p>Presente simple, rutinas, preguntas — empieza a tener conversaciones reales.</p></div>
+            <div><h5>Semana 5-6 · Estructura A1</h5><p>Aprende a hablar de rutinas, preguntas y empieza a tener conversaciones reales.</p></div>
           </div>
           <div class="feat">
             <div class="ic">4</div>
-            <div><h5>Semana 7-8 · Llega al colegio listo</h5><p>Conversaciones funcionales en inglés · ventaja real ante sus compañeros.</p></div>
+            <div><h5>Semana 7-8 · Llega al colegio listo</h5><p>Conversaciones funcionales en inglés que le dan una ventaja real y visible en su salón de clases.</p></div>
           </div>
         </div>
       </div>
@@ -813,9 +830,9 @@
 
 <!-- PILLARS -->
 <section class="sec pillars">
-  <div class="wrap" style="text-align:center;margin-bottom:46px">
+  <div class="wrap sec-intro">
     <span class="sec-eyebrow">POR QUÉ ELEGIR FYR LOIS</span>
-    <h2 class="sec-headline">Lo que recibes <b>en cada clase.</b></h2>
+    <h2 class="sec-headline">Lo que recibes en cada clase.</h2>
   </div>
   <div class="wrap">
     <div class="pil-grid">
@@ -852,9 +869,9 @@
 <section class="sched">
   <div class="wrap sched-grid">
     <div class="sched-h">
-      <span class="sec-eyebrow or">HORARIOS Y DETALLES</span>
-      <h2>Elige el horario que <b>te queda</b>.</h2>
-      <p>Dos horarios a elegir, de lunes a jueves. Todas las clases son <b>en vivo</b> con profesor en pantalla — no grabaciones. Si necesitas ajustes por viaje o agenda, hablamos.</p>
+      <span class="sec-eyebrow or">DISEÑADO PARA TU DÍA</span>
+      <h2>Elige el horario que <b>mejor se adapte a ti.</b></h2>
+      <p>Dos horarios a elegir, de lunes a jueves. Clases 100% en vivo con profesor en pantalla y participación real, sin grabaciones. Si necesitas flexibilidad por viajes o compromisos de agenda, lo resolvemos juntos.</p>
       <div class="turns">
         <div class="turn">
           <div class="ic">☀️</div>
@@ -874,14 +891,14 @@
     </div>
     <div class="details">
       <h3>📋 DETALLES DEL PROGRAMA</h3>
-      <div class="row"><div class="ic">📅</div><div><div class="lbl">INICIO</div><div class="val">Nuevos grupos cada mes · escríbenos por tu cupo</div></div></div>
+      <div class="row"><div class="ic">📅</div><div><div class="lbl">INICIO</div><div class="val">Nuevos grupos cada mes · Escríbenos para obtener tu cupo</div></div></div>
       <div class="row"><div class="ic">🏁</div><div><div class="lbl">HORARIOS</div><div class="val">7-9 AM · 9-11 AM · 11 AM-1 PM</div></div></div>
       <div class="row"><div class="ic">⏱</div><div><div class="lbl">DURACIÓN</div><div class="val">8 semanas · 64 horas académicas por nivel</div></div></div>
       <div class="row"><div class="ic">🗓</div><div><div class="lbl">FRECUENCIA</div><div class="val">4 días por semana · 2 horas por sesión</div></div></div>
-      <div class="row"><div class="ic">💻</div><div><div class="lbl">MODALIDAD</div><div class="val">Clases en vivo (online)</div></div></div>
+      <div class="row"><div class="ic">💻</div><div><div class="lbl">MODALIDAD</div><div class="val">Clases Online · 100% en vivo</div></div></div>
       <div class="row"><div class="ic">📦</div><div><div class="lbl">INCLUYE</div><div class="val">Material digital · evaluaciones · certificado</div></div></div>
-      <div class="row"><div class="ic">📊</div><div><div class="lbl">NIVELES</div><div class="val">Introductorio · A1 · A2 · B1 · B2 · C1 (MCER)</div></div></div>
-      <div class="row"><div class="ic">💵</div><div><div class="lbl">INVERSIÓN</div><div class="val">$540 por nivel · menos de $9/hora · material aparte</div></div></div>
+      <div class="row"><div class="ic">📊</div><div><div class="lbl">NIVELES</div><div class="val">A1 · A2 · B1 · B1+ · B2 · C1 (MCER)</div></div></div>
+      <div class="row"><div class="ic">💵</div><div><div class="lbl">INVERSIÓN</div><div class="val">$560 por nivel · Menos de $9/hora</div></div></div>
     </div>
   </div>
 </section>
@@ -896,18 +913,18 @@
     <div class="why-grid">
       <div class="why-card">
         <div class="ic">🎓</div>
-        <h3>27 años enseñando inglés</h3>
-        <p>Fundada en 1999. Hemos visto pasar metodologías, apps y modas — y seguimos enseñando <b>como funciona de verdad</b>: profesor humano, grupos pequeños, conversación real.</p>
+        <h3>27 años enseñando inglés.</h3>
+        <p>Fundada en 1999. Hemos visto pasar metodologías, apps, tendencias y seguimos enseñando como realmente funciona: con profesores humanos, en grupos reducidos y conversación real.</p>
       </div>
       <div class="why-card">
         <div class="ic">🇪🇺</div>
         <h3>Método CEFR certificado</h3>
-        <p>El estándar europeo (A1, A2, B1, B2, C1, C2) que usan universidades y empleadores serios en todo el mundo. <b>Tu nivel es oficial</b>, no una barra de progreso.</p>
+        <p>(A1, A2, B1, B1+, B2, C1, C2) que usan universidades y empleadores serios en todo el mundo. <b>Tu nivel es oficial</b>, no una barra de progreso.</p>
       </div>
       <div class="why-card">
         <div class="ic">👨‍🏫</div>
-        <h3>Profesores TEFL/Celta</h3>
-        <p>Todos los profesores tienen certificación internacional. <b>No es la prima que viajó a Miami</b> — son docentes profesionales con experiencia.</p>
+        <h3>Profesores certificados TEFL / CELTA</h3>
+        <p>Nuestros profesores tienen certificación internacional. Más allá de hablar el idioma, son docentes profesionales con experiencia real en el aula.</p>
       </div>
     </div>
   </div>
@@ -918,7 +935,7 @@
   <div class="wrap">
     <div class="testi-h">
       <span class="pre">HISTORIAS REALES DEL INTENSIVO</span>
-      <h2>En 8 semanas, <b>otro nivel.</b></h2>
+      <h2>8 semanas: <b>Otro nivel.</b></h2>
     </div>
     <div class="testi-grid">
       <div class="quote">
@@ -934,7 +951,7 @@
       <div class="quote">
         <span class="qm">"</span>
         <span class="tag adult">ADULTA · 42 AÑOS</span>
-        <p>Llevaba 10 años diciendo "cuando tenga tiempo aprendo inglés". Me metí al horario de 9 a 11am — antes empezaba el trabajo a las 12. 8 semanas después estaba teniendo una entrevista de trabajo en inglés. El secreto fue la mañana, mi cerebro absorbe mejor antes del mediodía.</p>
+        <p>Llevaba 10 años diciendo "cuando tenga tiempo aprendo inglés". Me inscribí en el horario de 9 a 11am, antes de empezar el trabajo a las 12. 8 semanas después estaba teniendo una entrevista de trabajo en inglés. El secreto fue hacerlo en la mañana, mi cerebro absorbe mejor antes del mediodía.</p>
         <div class="who">
           <div class="name">ANDREA G.</div>
           <div class="meta">ADMINISTRADORA · VALENCIA</div>
@@ -957,10 +974,10 @@
 
 <!-- SEDES -->
 <section class="sec sedes" id="sedes">
-  <div class="wrap" style="text-align:center;margin-bottom:46px">
+  <div class="wrap sec-intro">
     <span class="sec-eyebrow or">FYR LOIS EN VENEZUELA</span>
-    <h2 class="sec-headline">Sedes <b>principales</b></h2>
-    <p class="sec-sublead sec-sublead--spaced">El Intensivo: AM es 100% online en vivo; estas son nuestras sedes físicas para información, evaluaciones y todo lo que necesites de forma presencial.</p>
+    <h2 class="sec-headline">SEDES PRINCIPALES</h2>
+    <p class="sec-sublead sec-sublead--spaced">El Intensivo AM es 100% online y en vivo. Estas son nuestras sedes físicas para brindarte información, realizar evaluaciones y atenderte de forma presencial cuando lo necesites.</p>
   </div>
   <div class="wrap">
     <div class="sedes-grid">
@@ -999,15 +1016,15 @@
     <div class="faq-list" id="faqList">
       <div class="qa">
         <div class="qrow"><p class="q">¿EL PROGRAMA ES PARA NIÑOS O ADULTOS?</p><span class="chev">▾</span></div>
-        <p class="a">Es para los dos. El mismo programa intensivo de 64 horas se adapta a la edad: grupos por edad (niños, adolescentes, adultos), mismo profesor certificado, misma metodología. Hay horarios pensados para cada perfil — temprano para quien trabaja, media mañana para emprendedores y jubilados, intermedio para padres que ya dejaron a los niños en el colegio.</p>
+        <p class="a">Es para ambos, pero en espacios completamente diseñados para cada uno. El intensivo de 64 horas cuenta con la misma metodología y profesores certificados, dividiéndose en grupos específicos por edad: niños, adolescentes y adultos. Tenemos un horario ideal para cada estilo de vida: temprano si vas a la oficina, a media mañana para emprendedores y jubilados, o a mitad de jornada justo después de dejar a los niños en el colegio.</p>
       </div>
       <div class="qa">
         <div class="qrow"><p class="q">¿LAS CLASES SON GRABADAS O EN VIVO?</p><span class="chev">▾</span></div>
-        <p class="a">100% en vivo, con profesor real, cámara prendida. No es una app, no es un curso pre-grabado, no son videos de YouTube. Es clase real por Zoom con tu profesor cada día.</p>
+        <p class="a">100% en vivo, con profesor real y cámara prendida. No es una app, no es un curso pre-grabado, no son videos de YouTube. Es una clase real, por Zoom, con tu profesor cada día.</p>
       </div>
       <div class="qa">
         <div class="qrow"><p class="q">¿PUEDO EMPEZAR SI NO SÉ NADA DE INGLÉS?</p><span class="chev">▾</span></div>
-        <p class="a">Sí — el programa está diseñado exactamente para empezar de cero. El nivel introductorio (primeras 4 semanas) asume que no sabes nada y construye la base. Si ya sabes algo, el profesor te ubica donde corresponde.</p>
+        <p class="a">Sí, el programa está diseñado exactamente para empezar de cero. El nivel introductorio (primeras 4 semanas) asume que no sabes nada y construye la base. Si ya sabes algo, el profesor te ubica donde corresponde.</p>
       </div>
       <div class="qa">
         <div class="qrow"><p class="q">¿QUÉ PASA SI ME PIERDO UNA CLASE?</p><span class="chev">▾</span></div>
@@ -1015,7 +1032,7 @@
       </div>
       <div class="qa">
         <div class="qrow"><p class="q">¿CÓMO ME INSCRIBO?</p><span class="chev">▾</span></div>
-        <p class="a">Escríbenos por WhatsApp. Te confirmamos disponibilidad de cupo en el horario que prefieras, te enviamos los datos de pago y al confirmar quedas inscrito. Cupos son limitados por grupo para garantizar atención personalizada.</p>
+        <p class="a">Escríbenos por WhatsApp. Te confirmamos disponibilidad de cupo en el horario que prefieras, te enviamos los datos de pago y al confirmar quedas inscrito. Los cupos son limitados por grupo para ofrecer la atención personalizada.</p>
       </div>
     </div>
   </div>
@@ -1024,8 +1041,13 @@
 <!-- FINAL CTA -->
 <section class="final">
   <div class="wrap">
-    <h2>Tu <span class="y">mañana</span> ya está libre.<br>Úsala para <span class="g">dominar inglés.</span></h2>
-    <p>8 semanas. 64 horas. Un nivel completo del MCER. <b>$540 por nivel</b> (menos de $9/hora · material aparte). 3 horarios de la mañana para elegir — y empezamos grupos nuevos cada mes. Escríbenos hoy por WhatsApp y te confirmamos disponibilidad en el horario que te conviene.</p>
+    <h2>Tu <span class="y">mañana</span> ya está libre.<br>Úsala para <span class="g">dominar el inglés.</span></h2>
+    <div class="final-lines">
+      <span>8 semanas · 64 horas · Un nivel completo del MCER.</span>
+      <span>Solo <b>$560 por nivel</b> (menos de $9 la hora, material aparte).</span>
+      <span>Elige entre nuestros 3 horarios de la mañana. Iniciamos grupos nuevos cada mes.</span>
+      <span>Escríbenos hoy por WhatsApp y asegura tu cupo en el horario que te conviene</span>
+    </div>
     <div class="row">
       <a class="cta-pill whatsapp-link" href="https://wa.me/16893225402?text=Hola%2C%20me%20interesa%20el%20Intensivo%3A%20AM%20de%20Fyr%20Lois." target="_blank" rel="noopener noreferrer">
         <span class="wa">
